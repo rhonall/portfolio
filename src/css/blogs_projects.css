@@ -1,0 +1,437 @@
+/*------------*/
+/* Blogs Page */
+/*------------*/
+
+.tile {
+    min-width: 15rem;
+    min-height: 15rem;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    z-index: -1;
+}
+
+.tiles-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tile-title {
+    color: var(--clr-secondary);
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 3px 3px rgb(43, 43, 43);
+    max-width: 15ch;    
+    padding: 0.5em 1em;
+    z-index: 2;
+}
+
+.blog-title {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.special-position{
+    bottom: -4.5rem;
+}
+
+/* Below style applied to projects tiles as well */
+.project-tile::before,
+.blog-tile:before {
+    content: "";
+    position: absolute;
+    background-color: var(--clr-bg-darkpurple);
+    width: 100%;
+    height: 100%;
+}
+
+.blog-tile:before {
+    opacity: 0.5;
+}
+
+.project-tile::before {
+    opacity: 0.4;
+}
+
+/*----------------------*/
+/* Individual blog post */
+/*----------------------*/
+.blog-top-1 {
+    background-image: url(../image/blog_post1.jpeg);
+}
+
+.blog-top-2 {
+    background-image: url(../image/blog_post2.jpeg);
+}
+
+.blog-top-3 {
+    background-image: url(../image/blog_post3.jpeg);
+}
+
+.blog-top-4 {
+    background-image: url(../image/blog_post4.jpeg);
+}
+
+.blog-top-5 {
+    background-image: url(../image/blog_post5.jpeg);
+}
+
+.page-title {
+    color: var(--clr-primary);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 1rem 0;
+}
+
+.blog-date {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.blog-bottom {
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.blog-bottom p {
+    line-height: 1.9;
+    margin-bottom: 0.8rem;
+}
+
+/* --------------------------------------- */
+/* Desktop version of individual blog post */
+/* --------------------------------------- */
+@media only screen and (min-width: 961px){
+    .blog-posts {
+        display: flex;
+        max-width: 1100px;
+    } 
+}
+
+/*---------------*/
+/* Projects Page */
+/*---------------*/
+.projects-wrapper {
+    gap: 6.5rem;
+    margin-bottom: 5rem;
+}
+
+.project-tile {
+    position: relative;
+    filter: grayscale(60%)
+}
+
+.project-6 {
+    margin-bottom: 2rem;
+}
+
+.project-title {
+    font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+    letter-spacing: 2px;
+    max-width: 40ch;
+    position: absolute;
+    bottom: -3.3rem;
+}
+
+.project-3 .project-title, 
+.project-6 .project-title {
+    bottom: -4.5rem;
+}
+
+.program-icons {
+    font-size: 1.2rem;
+    text-shadow: 2px 2px rgb(43, 43, 43);
+    position: absolute;
+    bottom: -5.6rem;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.project-3 .program-icons, 
+.project-6 .program-icons {
+    bottom: -6.7rem;
+}
+
+.fa-html5 {
+    color: #ff3d0d;
+}
+
+.fa-css3-alt {
+    color: #7a94ff;
+}
+
+.fa-js-square {
+    color: #c7b43b;
+}
+
+.project-info {
+    position: absolute;
+    visibility: hidden;
+}
+
+.project-1 {
+    background-image: url(../image/just_breathe.png);
+}
+
+.project-2 {
+    background-image: url(../image/whac_a_mole.png);
+}
+
+.project-3 {
+    background-image: url(../image/netflix_card_clone.png);
+}
+
+.project-4 {
+    background-image: url(../image/6_nimmt.png);
+    background-position: -10px -5px;
+}
+
+.project-5 {
+    background-image: url(../image/blackjack.png);
+    background-position: -25px 0px;
+}
+
+
+.project-6 {
+    background-image: url(../image/rock_paper_scissors.png);
+    background-position: -70px 0px;
+}
+
+/*------------------------------*/
+/* Blogs page in tablet version */
+/*------------------------------*/
+@media only screen and (min-width: 600px) {
+    .tiles-wrapper {
+        max-width: 1400px;
+    }
+
+    .tile {
+        min-width: 10rem;
+        min-height: 18rem;
+    }
+
+    .blog-tile {
+        overflow: hidden;
+    }
+
+    .blog-tile:before {
+        transform: translateY(65%);
+        transition: all 0.4s ease;
+    }
+    
+    .blog-title {
+        transform: translateY(125%);
+        transition: all 0.4s ease;
+    }
+
+    .blog-wrapper:hover .blog-tile:before,
+    .blog-wrapper:hover .blog-title,
+    .blog-wrapper:focus .blog-tile:before,
+    .blog-wrapper:focus .blog-title {
+        transform: translateY(0%);
+    }
+}
+
+
+/*----------------------------------*/
+/* Projects page on tablet version */
+/*---------------------------------*/
+@media only screen and (min-width: 600px) {
+    .projects-wrapper {
+        gap: 10rem 1rem;
+    }
+
+    .project-tile {
+        min-width: 10rem;
+        min-height: 18rem;
+    }
+
+    .project-title {
+        bottom: -5.5rem;
+    }
+
+    .project-3 .project-title, 
+    .project-6 .project-title {
+        bottom: -6.5rem;
+    }
+    
+    .project-1,
+    .project-2,
+    .project-3,
+    .project-4,
+    .project-5,
+    .project-6 {
+        filter: grayscale(80%);
+    }
+
+    .project-1 {
+        background-position: -58px 0px;
+    }
+
+    .project-2 {
+        background-position: -60px 0px;
+    }
+
+    .project-3 {
+        background-position: -50px 0px;
+    }
+    
+    .project-5 {
+        background-position: -90px 0px;
+    }
+    
+    .project-6 {
+        background-position: -140px 0px;
+    }
+
+    .program-icons {
+        bottom: -8.3rem;
+    }
+
+    .project-3 .program-icons, 
+    .project-6 .program-icons {
+        bottom: -9rem;
+    }
+
+    .project-6 {
+        margin-bottom: 5rem;
+    }
+}
+
+/*----------------------------------*/
+/* Projects page on desktop version */
+/*----------------------------------*/
+@media only screen and (min-width: 980px) {
+    .page-title {
+        margin-bottom: 3rem;
+    }
+
+    .projects-wrapper {
+        gap: 2rem 1rem;
+    }
+
+    .project-tile {
+        filter: grayscale(80%) blur(1px);
+        overflow: hidden;
+    }
+
+    .project-tile::before {
+        transform: translateY(100%);
+        transition: all 0.4s ease;
+        opacity: 0.7;
+    }
+
+    .project-2::before,
+    .project-4::before,
+    .project-6::before {
+        opacity: 0.8;
+    }
+  
+    .project-title {
+        position: absolute;
+        top: 0rem;
+        max-width: 40ch;
+        transform: translateY(100%);
+        transition: all 0.4s ease;
+    }
+
+    .program-icons {
+        top: 4.3rem;
+        transform: translateY(100%);
+        transition: all 0.4s ease;
+    }
+
+    .project-info {
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-align: center;
+        text-shadow: 3px 3px rgb(43, 43, 43);
+        visibility: unset;
+        top: 7rem;
+        max-width: 90%;
+        transform: translateY(130%);
+        transition: all 0.4s ease;
+    }
+
+    .project-2 .project-info,
+    .project-3 .project-info,
+    .project-6 .project-info {
+        transform: translateY(160%);
+        transition: all 0.4s ease;
+    }
+
+    .project-wrapper:hover .project-tile,
+    .project-wrapper:focus .project-tile {
+        filter: grayscale(70%) blur(0px);
+    }
+
+    .project-wrapper:hover .project-tile:before,
+    .project-wrapper:focus .project-tile:before {
+        transform: translateY(0%);
+    }
+
+    .project-wrapper:hover .project-title,
+    .project-wrapper:focus .project-title {
+        transform: translateY(5%);
+    } 
+
+    .project-wrapper:hover .program-icons,
+    .project-wrapper:focus .program-icons {
+        transform: translateY(5%);
+    } 
+
+    .project-wrapper:hover .project-2 .program-icons,
+    .project-wrapper:hover .project-2 .program-icons,
+    .project-wrapper:focus .project-2 .program-icons,
+    .project-wrapper:focus .project-2 .program-icons {
+        transform: translateY(7%);
+    } 
+
+    .project-wrapper:hover .project-3 .program-icons,
+    .project-wrapper:focus .project-3 .program-icons {
+        transform: translateY(13%);
+    } 
+
+    .project-wrapper:hover .project-6 .program-icons,
+    .project-wrapper:focus .project-6 .program-icons {
+        transform: translateY(13%);
+    }
+
+    .project-wrapper:hover .project-info,
+    .project-wrapper:focus .project-info {
+        transform: translateY(3%);
+    } 
+
+    .project-wrapper:hover .project-2 .project-info,
+    .project-wrapper:focus .project-2 .project-info {
+        transform: translateY(15%);
+    } 
+
+    .project-wrapper:hover .project-3 .project-info,
+    .project-wrapper:focus .project-3 .project-info {
+        transform: translateY(30%);
+    } 
+
+    .project-wrapper:hover .project-6 .project-info,
+    .project-wrapper:focus .project-6 .project-info {
+        transform: translateY(25%);
+    } 
+
+    .project-6 {
+        margin-bottom: 0rem;
+    }
+
+}

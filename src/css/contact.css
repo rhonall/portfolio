@@ -1,0 +1,55 @@
+/*---------------*/
+/* Contact Page */
+/*-------------*/
+.contact-text-wrapper p {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+#contact-logos-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#contact {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contact-logo {
+    font-size: 1.5rem;
+    transition: all 0.5s ease;
+}
+
+/* Hover Effect on Social icons */
+.contact-logo:hover,
+.contact-logo:focus {
+    transform: scale(1.4) rotate(360deg);
+}
+
+/* ------------------------------- */
+/* Contact page on desktop version */
+/* ------------------------------- */
+@media only screen and (min-width: 961px) {
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contact-text-wrapper .page-title {
+        margin-bottom: 1rem;
+    }
+
+    .contact-logo {
+        font-size: 2rem;
+    }
+
+}

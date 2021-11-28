@@ -1,0 +1,91 @@
+:root {
+    --clr-primary: hsl(166, 100%, 70%);
+    --clr-secondary: hsl(225, 100%, 91%); 
+    --clr-bg-darkpurple: hsl(252, 70%, 17%);
+    --clr-bg-darkblue: hsl(220, 72%, 17%);
+    --clr-nav-darkblue: hsl(246, 62%, 15%);
+    --box-shadow: 5px 5px 4px hsl(0, 0%, 4%);
+}
+
+/*-----------------*/
+/* General Styles */
+/*----------------*/
+
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+i {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-secondary);
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+body {
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    color: var(--clr-secondary);
+    background: rgb(25,13,72);
+    background: linear-gradient(180deg, rgba(25,13,72,1) 0%, rgba(12,33,74,1) 100%); 
+}
+
+.button {
+    color: var(--clr-primary);
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: Transparent;
+    margin: 0 auto;
+    padding: 1em;
+    min-width: 13em;
+    border: 1px solid var(--clr-primary);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-link {
+    color: var(--clr-primary);
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--clr-primary);
+    color: var(--clr-bg-darkblue);
+}
+
+.button:hover .button-link,
+.button:focus .button-link {
+    color: var(--clr-bg-darkblue);
+}
+
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-wrapper{
+    padding: 0rem 2rem;
+    max-width: 1000px;
+}
+

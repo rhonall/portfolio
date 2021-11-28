@@ -1,0 +1,386 @@
+/*----------------*/
+/* Navigation bar */
+/*----------------*/
+
+nav {
+    background-color: var(--clr-nav-darkblue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 3rem;
+    padding: 1rem;
+}
+
+nav img {
+    position: relative;
+    bottom: -5px;
+    width: 5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+nav img:hover {
+    transform: rotate(20deg);
+    filter: sepia(60%);
+}
+
+/*--------------------------------------------*/
+/* Hamburger menu (nav bar) on mobile Version */
+/*--------------------------------------------*/
+
+@media only screen and (max-width: 490px) {
+    /* Style the checkbox */
+    .toggler {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        cursor: pointer;
+        /* Set the size of the checkbox */
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+
+    /* Style hamburger menu */
+    .hamburger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 9;
+        width: 60px;
+        height: 60px;
+        padding: 1rem;
+        background: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Set the 3 hamburger lines */
+    .hamburger > div {
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background-color: var(--clr-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+
+    /* Adjust top and bottom lines position */
+    .hamburger > div:before, 
+    .hamburger > div:after {
+        content: "";
+        position: absolute;
+        z-index: 9;
+        top: -10px;
+        width: 100%;
+        height: 2px;
+        background: inherit;
+    }
+
+    /* Adjust bottom line position */
+    .hamburger > div:after {
+        top: 10px;
+    }
+
+    /* Toggler animate */
+    .toggler:checked + .hamburger > div {
+        transform: rotate(135deg);
+    }
+
+    /* Turn lines into X */
+    .toggler:checked + .hamburger > div:before, 
+    .toggler:checked + .hamburger > div:after {
+        top: 0;
+        transform: rotate(90deg);
+    } 
+
+    /* Rotate on hover when checked */
+    .toggler:checked:hover + .hamburger > div,
+    .toggler:checked:focus + .hamburger > div {
+        transform: rotate(225deg);
+    }
+
+    /* Show nav when checkbox is checked */
+    .toggler:checked ~ #nav-menu {
+        visibility: visible;
+    }
+
+    .toggler:checked ~ #nav-menu > div {
+        transform: scale(1);
+        transition-duration: 0.5s;
+    }
+
+    .toggler:checked ~ #nav-menu > div > div {
+        opacity: 1;
+        transition: opacity 0.4s ease ;
+    }
+
+    /* Style nav menu */
+    #nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #nav-menu > div {
+        background: var(--clr-nav-darkblue);
+        opacity: 0.95;
+        border-radius: 50%;
+        width: 400vw;
+        height: 400vh;
+        display: flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0); 
+        transition: all 0.4s ease;
+    }
+
+    #nav-menu > div > div {
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    #nav-menu > div > div > ul > li {
+        list-style: none;
+        color: var(--clr-primary);
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    #nav-menu > div > div > ul > li > a {
+        color: inherit;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}
+
+
+/*--------*/
+/* Footer */
+/*--------*/
+
+footer {
+    background-color: var(--clr-nav-darkblue);
+    min-height: 3rem;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5em;
+    overflow: hidden;
+}
+
+#social-icons {
+    width: 70%;
+    max-width: 20rem;
+}
+
+#social-icons ul {
+    display: flex;
+    width: 100%;
+}
+
+#social-icons ul li {
+    width: 100%;
+}
+
+#social-icons ul li i {
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5em 0;
+    transition: all 0.5s ease;
+}
+
+/* Hover Effect on Social icons */
+#social-icons ul li i:hover,
+#social-icons ul li i:focus {
+    transform: scale(1.4) rotate(360deg);
+}
+
+.fa-github:hover, 
+.fa-github:focus {
+    color: white;
+}
+
+.fa-twitter:hover,
+.fa-twitter:focus {
+    color: #1DA1F2;
+}
+
+.fa-linkedin:hover, 
+.fa-linkedin:focus {
+    color: #00a0dc;
+}
+
+.fa-envelope:hover, 
+.fa-envelope:focus {
+    color: var(--clr-primary);
+}
+
+footer p {
+    font-size: 0.7rem;
+}
+
+
+
+/* ------------------------------------- */
+/* Nav bar on tablet and desktop version */
+/* ------------------------------------- */
+@media only screen and (min-width: 490px) {
+    nav {
+        display: flex;
+        align-content: center;
+        height: 100%;
+    }
+
+    .nav-wrapper {
+        display: flex;
+        width: 70%;
+        max-width: 30rem;
+    }
+
+    /* Disable checkbox function and hide checkbox */
+    .toggler {
+        cursor: unset;
+        pointer-events: none;
+        transform: scale(0);
+    }
+
+    /* Hide hamburger menu */
+    .hamburger {
+        transform: scale(0);
+    }
+
+    #nav-menu, 
+    #nav-menu div {
+        width: 100%;
+    }
+
+    #menu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #menu a {
+        color:var(--clr-primary);
+        text-transform: uppercase;
+    }
+
+    #social-icons ul li i {
+        font-size: 1.5rem
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    /* Hover effect on nav menu */
+    .nav-list {
+        text-decoration: none;
+        padding: 0.5rem 0.6rem;
+        position: relative;
+    }
+
+    .nav-list::before, .nav-list::after {
+        content:"";
+        width: 0;
+        height: 1px;
+        position: absolute;
+        transition: all 0.2s ease-in-out;
+        background: var(--clr-primary);
+    }
+
+    span::before, span::after{
+        content:"";
+        width:1px;
+        height:0;
+        position: absolute;
+        transition: all 0.2s ease-in-out;
+        background: var(--clr-primary);
+    }
+
+    .nav-list:hover::before, 
+    .nav-list:hover::after,
+    .nav-list:focus::before, 
+    .nav-list:focus::after {
+        width: 100%;
+    }
+
+    .nav-list:hover span::before, 
+    .nav-list:hover span::after,
+    .nav-list:focus span::before, 
+    .nav-list:focus span::after {
+        height: 100%;
+    }
+
+    .nav-animation::after {
+        left:0;
+        bottom: 0;
+        transition-duration: 0.3s;
+    }
+
+    .nav-animation span::after {
+        right:0;
+        top: 0;
+        transition-duration: 0.3s;
+    }
+
+    .nav-animation::before {
+        right: 0;
+        top: 0;
+        transition-duration: 0.3s;
+    }
+
+    .nav-animation span::before {
+        left: 0;
+        bottom: 0;
+        transition-duration: 0.3s;
+    }    
+}
+
+/* ------------------------------------ */
+/* Footer on tablet and desktop version */ 
+/* ------------------------------------ */
+@media only screen and (min-width: 490px) {
+    footer {
+        flex-wrap: nowrap;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #social-icons {
+        order: 1;
+    }
+    
+    #copyright {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+    }
+
+    #copyright p {
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+
