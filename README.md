@@ -1,8 +1,8 @@
-# T1A2 Portfolio - Tan Na Lam 
+# Portfolio
 
 This portfolio website is created for future employees, customers and tech community. It is a platform for me to show my personality and showcase my skills, also helps me to build my online presence. I hope this portfolio can demonstrate my commitment to learn and grow as a developer, and landing a job as a Frontend Developer.
 
-[Published portfolio website](https://rhona-lam.netlify.app/) \
+[Published portfolio website](https://rhona-lam.netlify.app/)
 
 <br />
 
