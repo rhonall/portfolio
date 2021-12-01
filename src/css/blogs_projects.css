@@ -128,6 +128,10 @@
     margin-bottom: 5rem;
 }
 
+.project-page-sub-title {
+    margin-bottom: 1rem;
+}
+
 .project-tile {
     position: relative;
     filter: grayscale(60%)
@@ -187,7 +191,11 @@
 }
 
 .project-2 {
-    background-image: url(../image/whac_a_mole.png);
+    background-image: url(../image/books_that_we_loved.png);
+}
+
+.project-2 > h2 {
+    font-size: 1rem;
 }
 
 .project-3 {
@@ -250,6 +258,10 @@
 /* Projects page on tablet version */
 /*---------------------------------*/
 @media only screen and (min-width: 600px) {
+    .project-page-sub-title {
+        margin-bottom: 2rem;
+    }
+    
     .projects-wrapper {
         gap: 10rem 1rem;
     }
@@ -315,9 +327,10 @@
 /* Projects page on desktop version */
 /*----------------------------------*/
 @media only screen and (min-width: 980px) {
-    .page-title {
+    .project-page-sub-title {
         margin-bottom: 3rem;
     }
+
 
     .projects-wrapper {
         gap: 2rem 1rem;
